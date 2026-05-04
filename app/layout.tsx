@@ -5,8 +5,6 @@ import { getMetadataBase } from "@/lib/siteUrl";
 import "./globals.css";
 
 const siteUrl = getMetadataBase();
-/** Search Console「HTML タグ」方式の content のみ（環境変数で設定） */
-const googleSiteVerification = process.env.GOOGLE_SITE_VERIFICATION?.trim();
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,9 +21,9 @@ export const metadata: Metadata = {
   title: "SNS投稿ゆる診断メーカー",
   description:
     "X / Instagram / Threads 向けの投稿文をAIがやさしく診断。良い点・改善点・書き換え案・ハッシュタグ案を提案します。",
-  ...(googleSiteVerification
-    ? { verification: { google: googleSiteVerification } }
-    : {}),
+  verification: {
+    google: "JXRLiTzJgk9_m3ua3OwNwKYfrjH3ZQQuua_Trrb8H4s",
+  },
 };
 
 export const viewport: Viewport = {
